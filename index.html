@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="sr-Cyrl" data-theme="light" data-script="cyr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Редизајн Видовдана — предлог</title>
+<meta name="description" content="Предлог редизајна магазина Видовдан: читљивија типографија, ћирилица и латиница, ноћно читање и брз, приступачан сајт. Прототип у три екрана.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%238C1F2F'/%3E%3Cpath d='M16 6 L26 16 L16 26 L6 16 Z' fill='none' stroke='%23D2AC57' stroke-width='2'/%3E%3Cpath d='M16 12 L20 16 L16 20 L12 16 Z' fill='%23D2AC57'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/vollkorn-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/golos-text-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/vidovdan.css">
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  try {
+    var t = localStorage.getItem('vd-tema');
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Пређи на садржај</a>
+
+<!-- ======================================================= горња трака -->
+<div class="util">
+  <div class="wrap util__in">
+    <span class="util__date">Предлог редизајна · <b>vidovdan.org</b></span>
+    <span class="util__spacer"></span>
+    <div class="util__tools">
+      <div class="toggle-group" role="group" aria-label="Избор писма">
+        <button type="button" data-script-btn="cyr" aria-pressed="true">ЋИР</button>
+        <button type="button" data-script-btn="lat" aria-pressed="false">LAT</button>
+      </div>
+      <button type="button" class="icon-btn" data-theme-btn aria-label="Ноћно читање">
+        <svg data-icon-moon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg data-icon-sun viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================================== навигација -->
+<nav class="nav" data-nav aria-label="Главна навигација">
+  <div class="wrap nav__in">
+    <span class="nav__mini">ВИДОВДАН</span>
+    <ul class="nav__links">
+      <li><a href="#zasto">Зашто</a></li>
+      <li><a href="#predlog">Предлог</a></li>
+      <li><a href="#prototip">Прототип</a></li>
+      <li><a href="#identitet">Идентитет</a></li>
+      <li><a href="#plan">План</a></li>
+    </ul>
+    <a class="btn btn--primary" href="pocetna.html" style="padding:.6rem 1.1rem">Отвори прототип</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- =============================================================== херо -->
+<section class="pitch-hero">
+  <div class="wrap">
+    <span class="pitch-hero__label reveal">Неслужбени предлог · 2026</span>
+    <h1 class="reveal">Видовдан,<em>прочитан до краја.</em></h1>
+    <p class="dek reveal">Садржај магазина је оно што држи читаоце. Овај предлог не дира уређивачку политику
+      — мења само оно што стоји између текста и читаоца: типографију, темпо учитавања, ред на страници
+      и избор писма.</p>
+    <div class="pitch-cta reveal">
+      <a class="btn btn--gold" href="pocetna.html">Погледај прототип</a>
+      <a class="btn btn--ghost" href="#zasto">Шта се мења</a>
+    </div>
+
+    <div class="stat-row reveal">
+      <div class="stat"><b>3</b><span>готова екрана<br>у прототипу</span></div>
+      <div class="stat"><b>ЋИР/LAT</b><span>пресловљавање<br>на један клик</span></div>
+      <div class="stat"><b>0</b><span>спољних<br>библиотека</span></div>
+      <div class="stat"><b>~60 KB</b><span>CSS и JS<br>укупно, некомпресовано</span></div>
+      <div class="stat"><b>AA</b><span>циљани ниво<br>приступачности</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== зашто -->
+<section class="sec" id="zasto">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <span class="kicker">Полазна тачка</span>
+      <h2>Четири ствари које траже највише пажње</h2>
+      <p class="meta">Ово су радне претпоставке, не пресуда. Пре него што се било шта црта, потврђујемо их
+        мерењем: Analytics, PageSpeed Insights и кратак разговор са десетак сталних читалаца.
+        Ако мерење каже друго, план се мења.</p>
+    </div>
+
+    <div class="prob-grid">
+      <article class="prob reveal">
+        <span class="prob__n">01</span>
+        <h3>Читање на телефону</h3>
+        <p>Већина читалаца портала долази са телефона. Ако су ред текста, размак и величина слова
+          подешени за екран рачунара, читалац одустаје на трећем пасусу.</p>
+        <span class="prob__fix">→ Мера за текст, скала слова везана за ширину екрана, палац као јединица за дугмад.</span>
+      </article>
+
+      <article class="prob reveal">
+        <span class="prob__n">02</span>
+        <h3>Хијерархија насловне</h3>
+        <p>Када све вести изгледају подједнако важно, читалац не бира — само скролује. Уредништво тако
+          губи главни алат који има: могућност да каже шта је данас најважније.</p>
+        <span class="prob__fix">→ Једна јасна насловна прича, три издвојене, па рубрике. Ред који се види на први поглед.</span>
+      </article>
+
+      <article class="prob reveal">
+        <span class="prob__n">03</span>
+        <h3>Брзина и оглашавање</h3>
+        <p>Тешке скрипте и огласи који померају садржај током учитавања највише коштају баш најверније
+          читаоце — оне на слабијој вези и старијим телефонима.</p>
+        <span class="prob__fix">→ Резервисана места за огласе, слике са задатим односом страна, критични CSS у самом документу.</span>
+      </article>
+
+      <article class="prob reveal">
+        <span class="prob__n">04</span>
+        <h3>Писмо и идентитет</h3>
+        <p>Магазин који носи име Видовдан треба и да изгледа тако — ћирилично, озбиљно, без китњастог.
+          Али читаоцу коме је лакше на латиници то не сме бити препрека.</p>
+        <span class="prob__fix">→ Ћирилица као подразумевана, латиница на један клик, исти текст — без дупле редакције.</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ предлог -->
+<section class="sec sec--alt" id="predlog">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <span class="kicker kicker--lapis">Предлог</span>
+      <h2>Шест ствари које прототип већ ради</h2>
+      <p class="meta">Свака од њих је уграђена у екране које можете отворити — ништа од овога није само на папиру.</p>
+    </div>
+
+    <div class="feat-grid">
+      <article class="feat reveal">
+        <div class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V6a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M15 4v5h5"/><path d="M8 13h8M8 17h5"/></svg></div>
+        <h3>Мера за читање</h3>
+        <p>Текст чланка иде до 68 знакова у реду, са проредом 1,72. То је ред у коме око не губи почетак
+          следеће линије — исто правило које користе штампани магазини.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V5h16v2"/><path d="M9 19h6"/><path d="M12 5v14"/></svg></div>
+        <h3>Ћирилица ⇄ латиница</h3>
+        <p>Право пресловљавање у прегледачу, укључујући двознаке — ЉУБАВ даје LJUBAV, Његош даје Njegoš.
+          Избор се памти. Редакција и даље пише само једном, ћирилицом.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></div>
+        <h3>Ноћно читање</h3>
+        <p>Тамна тема није инвертована светла — има своју палету, топлије беле и пригушени оксблуд,
+          да дуг текст увече не замара. Прати подешавање уређаја, али се може и ручно променити.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div>
+        <h3>Без спољних терета</h3>
+        <p>Ниједан оквир, ниједна библиотека. Обичан HTML, CSS и око 300 линија JavaScript-а.
+          Сајт се отвара и када веза попусти, а одржавање не зависи од туђих верзија.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>Архива која се користи</h3>
+        <p>Трака „На данашњи дан" на насловној враћа старе текстове у оптицај. Магазин са дугом архивом
+          тако добија садржај који не стари — и разлог да се читалац врати.</p>
+      </article>
+
+      <article class="feat reveal">
+        <div class="feat__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v.01"/><path d="M11 11h1v5h1"/></svg></div>
+        <h3>Приступачност као правило</h3>
+        <p>Контраст изнад 4,5:1, видљив фокус за тастатуру, семантички наслови, поштовање подешавања
+          „смањи анимације". Циљ је WCAG 2.1 AA — што уједно значи и бољи положај у претрази.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================== прототип -->
+<section class="sec" id="prototip">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <span class="kicker">Прототип</span>
+      <h2>Три екрана која носе цео сајт</h2>
+      <p class="meta">Кликните кроз њих као кроз прави сајт — навигација, писмо, тема и претрага раде.
+        Текстови и фотографије су приказни.</p>
+    </div>
+
+    <div class="proto-cards">
+      <a class="proto reveal" href="pocetna.html">
+        <image-slot tone="oxblood" seed="21" ratio="16/10" label="Насловна"></image-slot>
+        <div class="proto__body">
+          <span class="kicker kicker--bare kicker--muted">01 · Насловна</span>
+          <h3>Насловна страна</h3>
+          <p>Једна главна прича, издвојене вести, колумне, трака архиве и рубрике —
+            распоред који уредништву враћа контролу над пажњом.</p>
+          <span class="proto__go">Отвори
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="proto reveal" href="clanak.html">
+        <image-slot tone="lapis" seed="34" ratio="16/10" label="Чланак"></image-slot>
+        <div class="proto__body">
+          <span class="kicker kicker--bare kicker--muted">02 · Чланак</span>
+          <h3>Страна чланка</h3>
+          <p>Најважнији екран на сајту. Мера за читање, иницијал, издвојени цитат,
+            трака напретка и бочна колона са најчитанијим.</p>
+          <span class="proto__go">Отвори
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="proto reveal" href="rubrika.html">
+        <image-slot tone="gold" seed="47" ratio="16/10" label="Рубрика"></image-slot>
+        <div class="proto__body">
+          <span class="kicker kicker--bare kicker--muted">03 · Рубрика</span>
+          <h3>Страна рубрике</h3>
+          <p>Списак текстова са филтерима по темама и страничењем — образац који покрива
+            све рубрике и претрагу, уз једно те исто решење.</p>
+          <span class="proto__go">Отвори
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ сада/после -->
+<section class="sec sec--alt">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <span class="kicker kicker--gold">Разлика</span>
+      <h2>Шта се заправо мења</h2>
+    </div>
+    <div class="compare reveal">
+      <div class="compare--now">
+        <h3>Остаје нетакнуто</h3>
+        <ul>
+          <li>Уређивачка политика и избор тема</li>
+          <li>Име, мисија и тон магазина</li>
+          <li>Постојећи текстови и цела архива</li>
+          <li>Ауторски и колумнистички састав</li>
+          <li>Адресе постојећих страница (уз преусмерења ако затреба)</li>
+        </ul>
+      </div>
+      <div class="compare--new">
+        <h3>Добија ново рухо</h3>
+        <ul>
+          <li>Типографија и мера за читање на свим уређајима</li>
+          <li>Хијерархија насловне и страна рубрике</li>
+          <li>Избор писма и тамна тема</li>
+          <li>Брзина учитавања и стабилан распоред уз огласе</li>
+          <li>Приступачност, дељење и повратак у архиву</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== идентитет -->
+<section class="sec" id="identitet">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <span class="kicker">Идентитет</span>
+      <h2>Камен и хартија</h2>
+      <p class="meta">Боје су узете из српског средњовековног сликарства — окер и злато рукописа,
+        лапис плаветнило фреске, тамно црвено. Пергамент уместо беле, топло црно уместо чистог црног.
+        Ниједна застава, ниједан орнамент превише.</p>
+    </div>
+
+    <div class="swatches reveal">
+      <div class="sw"><div class="sw__chip" style="background:#F2EDE3"></div><div class="sw__meta"><b>Пергамент</b><code>#F2EDE3</code></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#191512"></div><div class="sw__meta"><b>Мастило</b><code>#191512</code></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#8C1F2F"></div><div class="sw__meta"><b>Оксблуд</b><code>#8C1F2F</code></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#1E3A5C"></div><div class="sw__meta"><b>Лапис</b><code>#1E3A5C</code></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#A8801F"></div><div class="sw__meta"><b>Злато</b><code>#A8801F</code></div></div>
+      <div class="sw"><div class="sw__chip" style="background:#DED3BF"></div><div class="sw__meta"><b>Хартија тон 3</b><code>#DED3BF</code></div></div>
+    </div>
+
+    <div class="type-spec reveal" style="margin-top:2.6rem">
+      <div class="type-row type-row--display">
+        <div class="type-row__label">Prata · заглавље и бројеви</div>
+        <div class="type-row__sample">ВИДОВДАН 1389</div>
+      </div>
+      <div class="type-row type-row--head">
+        <div class="type-row__label">Vollkorn 700 · наслови</div>
+        <div class="type-row__sample">Чувари писма и памћења</div>
+      </div>
+      <div class="type-row type-row--body">
+        <div class="type-row__label">Vollkorn 400 · текст</div>
+        <div class="type-row__sample">Сваки магазин има свој глас. Задатак типографије није да га надгласа,
+          него да га пренесе — чисто, до последњег реда, и на телефону и на екрану рачунара.</div>
+      </div>
+      <div class="type-row type-row--ui">
+        <div class="type-row__label">Golos Text · навигација и ознаке</div>
+        <div class="type-row__sample">ПОЛИТИКА · ДРУШТВО · ТРАДИЦИЈА · ИСТОРИЈА · КУЛТУРА</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== план -->
+<section class="sec sec--alt" id="plan">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <span class="kicker kicker--lapis">Како даље</span>
+      <h2>Четири корака, без прекида рада сајта</h2>
+      <p class="meta">Редизајн се пушта постепено. Стари сајт ради све време, а нови се укључује
+        тек када прође проверу на правом садржају.</p>
+    </div>
+
+    <ol class="phases reveal">
+      <li class="phase">
+        <div>
+          <h3>Мерење и разговор</h3>
+          <p>Преглед статистике, брзине и понашања читалаца. Кратак разговор са уредништвом:
+            шта смета вама, а шта читаоцима.</p>
+        </div>
+        <span class="phase__when">1 недеља</span>
+      </li>
+      <li class="phase">
+        <div>
+          <h3>Дизајн система</h3>
+          <p>Боје, типографија, компоненте и сви шаблони страница — насловна, рубрика, чланак,
+            аутор, претрага, о нама. Усаглашавање пре писања кода.</p>
+        </div>
+        <span class="phase__when">2–3 недеље</span>
+      </li>
+      <li class="phase">
+        <div>
+          <h3>Израда теме</h3>
+          <p>Преношење у постојећи систем за објављивање, без сељења садржаја. Огласна места,
+            претрага, архива и брзина. Тест на копији сајта.</p>
+        </div>
+        <span class="phase__when">3–4 недеље</span>
+      </li>
+      <li class="phase">
+        <div>
+          <h3>Пуштање и подешавање</h3>
+          <p>Прелазак уз чување свих постојећих адреса, праћење првих недеља и исправке
+            на основу онога што статистика покаже.</p>
+        </div>
+        <span class="phase__when">1–2 недеље</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================================================================ CTA -->
+<section class="cta-final">
+  <div class="wrap wrap--narrow">
+    <svg class="orn" viewBox="0 0 74 18" fill="none" aria-hidden="true" style="margin:0 auto">
+      <path d="M37 3 L45 9 L37 15 L29 9 Z" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M37 6.4 L40.4 9 L37 11.6 L33.6 9 Z" fill="currentColor"/>
+      <circle cx="19" cy="9" r="1.7" fill="currentColor"/>
+      <circle cx="55" cy="9" r="1.7" fill="currentColor"/>
+      <path d="M0 9 H14 M60 9 H74" stroke="currentColor" stroke-width="1.2"/>
+    </svg>
+    <h2>Ако вам се допада правац — идемо од мерења</h2>
+    <p>Прототип је бесплатан и ваш је да га покажете коме желите. Ако одлучите да идемо даље,
+      први корак је сат времена разговора и поглед у статистику.</p>
+    <div class="pitch-cta">
+      <a class="btn btn--gold" href="pocetna.html">Уђи у прототип</a>
+      <a class="btn btn--ghost" href="#zasto">Врати се на почетак</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__bottom" style="border-top:0;padding-top:0">
+      <p style="margin:0;max-width:64ch">
+        <strong style="color:var(--gold-soft)">Напомена.</strong>
+        Ово је неслужбени предлог редизајна, направљен као идеја за власнике магазина Видовдан.
+        Није наручен нити одобрен од стране редакције. Сви наслови, имена аутора и фотографије
+        у прототипу су приказни и не представљају стварне текстове.
+      </p>
+      <p style="margin:0">Предлог · 2026</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/image-slot.js"></script>
+<script src="assets/js/support.js"></script>
+</body>
+</html>

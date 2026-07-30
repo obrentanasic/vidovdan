@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="sr-Cyrl" data-theme="light" data-script="cyr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Задужбина која је преживела три века и један заборав | Видовдан</title>
+<meta name="description" content="Прототип стране чланка: мера за читање, иницијал, издвојени цитат, трака напретка и бочна колона.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%238C1F2F'/%3E%3Cpath d='M16 6 L26 16 L16 26 L6 16 Z' fill='none' stroke='%23D2AC57' stroke-width='2'/%3E%3Cpath d='M16 12 L20 16 L16 20 L12 16 Z' fill='%23D2AC57'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/vollkorn-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/golos-text-normal-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/vidovdan.css">
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  try {
+    var t = localStorage.getItem('vd-tema');
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Пређи на садржај</a>
+<div class="progress" data-progress></div>
+
+<!-- ======================================================= горња трака -->
+<div class="util">
+  <div class="wrap util__in">
+    <span class="util__date" data-date-greg>—</span>
+    <span class="util__saint">по јулијанском: <b data-date-jul>—</b></span>
+    <span class="util__spacer"></span>
+    <div class="util__tools">
+      <div class="toggle-group" role="group" aria-label="Избор писма">
+        <button type="button" data-script-btn="cyr" aria-pressed="true">ЋИР</button>
+        <button type="button" data-script-btn="lat" aria-pressed="false">LAT</button>
+      </div>
+      <button type="button" class="icon-btn" data-search aria-label="Претрага">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+      <button type="button" class="icon-btn" data-theme-btn aria-label="Ноћно читање">
+        <svg data-icon-moon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg data-icon-sun viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================== заглавље -->
+<header class="masthead" style="padding-bottom:.9rem">
+  <div class="wrap">
+    <span class="wordmark" style="font-size:var(--step-4)"><a href="pocetna.html">ВИДОВДАН</a></span>
+  </div>
+</header>
+
+<!-- ========================================================== навигација -->
+<nav class="nav" data-nav aria-label="Главна навигација">
+  <div class="wrap nav__in">
+    <span class="nav__mini">ВИДОВДАН</span>
+    <ul class="nav__links">
+      <li><a href="pocetna.html">Насловна</a></li>
+      <li><a href="rubrika.html">Политика</a></li>
+      <li><a href="rubrika.html">Друштво</a></li>
+      <li><a href="rubrika.html" aria-current="page">Традиција</a></li>
+      <li><a href="rubrika.html">Историја</a></li>
+      <li><a href="rubrika.html">Култура</a></li>
+      <li><a href="rubrika.html">Свет</a></li>
+      <li><a href="rubrika.html">Колумне</a></li>
+      <li><a href="rubrika.html">Видео</a></li>
+    </ul>
+    <button type="button" class="nav__burger" data-burger aria-label="Мени" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="drawer" data-drawer data-open="false">
+  <div class="drawer__top">
+    <button type="button" class="icon-btn" data-drawer-close aria-label="Затвори мени">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <ul class="drawer__list">
+    <li><a href="pocetna.html">Насловна</a></li>
+    <li><a href="rubrika.html">Политика</a></li>
+    <li><a href="rubrika.html">Друштво</a></li>
+    <li><a href="rubrika.html">Традиција</a></li>
+    <li><a href="rubrika.html">Историја</a></li>
+    <li><a href="rubrika.html">Култура</a></li>
+    <li><a href="rubrika.html">Свет</a></li>
+    <li><a href="rubrika.html">Колумне</a></li>
+    <li><a href="rubrika.html">Видео</a></li>
+  </ul>
+</div>
+
+<div class="overlay" data-search-overlay data-open="false">
+  <div class="overlay__close">
+    <button type="button" class="icon-btn" data-search-close aria-label="Затвори претрагу">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="overlay__box">
+    <form>
+      <label for="q">Претрага магазина</label>
+      <input id="q" type="search" placeholder="Појам, име аутора, рубрика…" autocomplete="off">
+    </form>
+    <p class="overlay__hint" data-search-msg>
+      Често тражено:
+      <a class="tag" href="rubrika.html">Задужбине</a>
+      <a class="tag" href="rubrika.html">Рукописи</a>
+      <a class="tag" href="rubrika.html">Слава</a>
+      <a class="tag" href="rubrika.html">Гусле</a>
+    </p>
+  </div>
+</div>
+
+<main id="main">
+<article data-progress-target>
+
+  <!-- ============================================================ увод -->
+  <div class="wrap">
+    <div class="art-head">
+      <nav class="crumbs" aria-label="Путања">
+        <a href="pocetna.html">Насловна</a><span>·</span><a href="rubrika.html">Традиција</a><span>·</span>Задужбине
+      </nav>
+      <span class="kicker">Тема дана</span>
+      <h1>Задужбина која је преживела три века и један заборав</h1>
+      <p class="dek">Обнова конака у подножју планине почела је од једне свеске, три фотографије
+        и упорности мештана који нису пристали да зграда постане складиште.</p>
+
+      <div class="byline">
+        <image-slot tone="ink" seed="7" round></image-slot>
+        <div class="byline__who">
+          <div class="byline__name">Милан Обрадовић</div>
+          <div class="meta">данас, 09.14 · 8 мин читања</div>
+        </div>
+        <div class="share">
+          <button type="button" class="icon-btn" aria-label="Подели на Фејсбуку">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-2.8h-2.8V9.4c0-.8.2-1.4 1.4-1.4h1.5V5.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8v2.8h2.5V21h3z"/></svg>
+          </button>
+          <button type="button" class="icon-btn" aria-label="Пошаљи е-поштом">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </button>
+          <button type="button" class="icon-btn" aria-label="Копирај везу">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"/></svg>
+          </button>
+          <button type="button" class="icon-btn" aria-label="Штампај" onclick="window.print()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="7" rx="1"/><path d="M7 14h10v6H7z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================= главна слика -->
+  <div class="wrap">
+    <figure class="art-hero">
+      <image-slot tone="oxblood" seed="101" ratio="21/9" label="Фотографија"></image-slot>
+      <figcaption>Конак после прве фазе радова. Приказна фотографија — у објављеном тексту овде стоји потпис и извор.</figcaption>
+    </figure>
+  </div>
+
+  <!-- ============================================================= текст -->
+  <div class="wrap">
+    <div class="art-body">
+      <div class="prose">
+        <p>Свеска је била танка, укоричена у платно које је некада било плаво. Унутра, оловком, попис:
+          колико је греда замењено, колико црепа набављено, ко је донео креч. Последњи упис носи датум
+          из марта — и стаје усред реченице, као да је неко позван напоље и није се вратио.</p>
+
+        <p>Осамдесет година касније, та свеска је једини документ на основу кога се уопште знало
+          како је конак изгледао пре него што су му дозидали задње крило. Мештани су је чували
+          у пластичној фасцикли, у фиоци сеоског дома културе, поред потврда о плаћеној струји.</p>
+
+        <h2>Од фиоке до пројекта</h2>
+
+        <p>Обнова спорих, малих задужбина ретко почиње одлуком неке институције. Почиње тако што
+          неко одбије да прихвати да је ствар готова. У овом случају то је био пензионисани геометар
+          који је, како каже, „хтео само да измери, да се зна колико је било".</p>
+
+        <p>Мерење је трајало две године. Резултат је био цртеж на пакпапиру, тачан до сантиметра,
+          и списак од четрдесет и седам ставки које треба урадити пре него што прва киша уђе кроз кров.
+          Тај списак је потом кружио општином осамнаест месеци.</p>
+
+        <blockquote>
+          Нису нам требале паре одмах. Требало нам је да неко напише да зграда постоји.
+          <cite>Из разговора са мештанима, приказни цитат</cite>
+        </blockquote>
+
+        <p>Кров је на крају покривен новцем прикупљеним на три сеоске славе и једној изложби
+          фотографија. Није било довољно за оригинални цреп, па је стављен онај који се могао
+          набавити — уз обећање, записано у општинској одлуци, да ће се то једном исправити.</p>
+
+        <div class="callout">
+          <h4>Шта је задужбина</h4>
+          <p>Задужбина је грађевина или фонд подигнут о трошку појединца, са наменом која га
+            надживљава — црква, школа, болница, конак за путнике. Правни статус таквих објеката
+            данас је најчешће нејасан, што је и главни разлог зашто обнове трају деценијама.</p>
+        </div>
+
+        <h2>Ко чува зграду коју нико не поседује</h2>
+
+        <p>Питање власништва је оно на чему се обнове најчешће заглаве. Задужбина по природи
+          нема власника у данашњем смислу — има намену. Када намена престане да се обавља,
+          зграда постаје ничија на папиру, а нечија у пракси: обично оних који живе најближе.</p>
+
+        <p>У пракси то значи да неко коси траву, неко зими разгрће снег са прилаза, а неко
+          трећи држи кључ. Ниједан од њих нема ниједан документ који то потврђује. Када дође
+          инспекција, нема с ким да разговара.</p>
+
+        <h3>Три ствари које би помогле</h3>
+
+        <ul>
+          <li>Јединствен попис задужбина по општинама, јаван и доступан на интернету.</li>
+          <li>Привремени статус „у обнови" који зауставља промену намене док радови трају.</li>
+          <li>Могућност да удружење мештана буде уписано као старалац, без преноса власништва.</li>
+        </ul>
+
+        <p>Ниједна од ове три ствари не тражи велика средства. Све три траже да неко седне и напише
+          правило — што је, судећи по свесци из фиоке, увек био најтежи део посла.</p>
+
+        <h2>Шта следи</h2>
+
+        <p>Друга фаза радова требало би да почне на пролеће. На списку су прозори, под у трпезарији
+          и степениште које се сада обилази. Свеска је, у међувремену, пресликана и један примерак
+          је остављен у архиву — овог пута не у фиоци.</p>
+
+        <p>Геометар каже да ће када буде готово поново измерити све, ради поређења. „Да се зна
+          колико је сада", каже. Пакпапир је, за сваки случај, већ спремио.</p>
+
+        <p class="meta" style="margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--rule-soft)">
+          Овај текст је приказни садржај прототипа. Догађаји, имена и цитати су измишљени
+          и служе само да покажу како изгледа страна чланка у предложеном редизајну.
+        </p>
+      </div>
+
+      <!-- ========================================================= бочна -->
+      <aside class="rail">
+        <div>
+          <h4>Најчитаније</h4>
+          <ol>
+            <li><a href="clanak.html">Рукопис из манастирске ризнице први пут пред јавношћу</a></li>
+            <li><a href="clanak.html">Ко још чува гусле — и зашто их млади поново узимају у руке</a></li>
+            <li><a href="clanak.html">Слава као породични архив: шта се памти, а шта тихо губи</a></li>
+            <li><a href="clanak.html">Занат који се преноси само гледањем</a></li>
+            <li><a href="clanak.html">Српске школе у дијаспори: три генерације и један уџбеник</a></li>
+          </ol>
+        </div>
+
+        <div>
+          <h4>Теме</h4>
+          <div class="tags">
+            <a class="tag" href="rubrika.html">Задужбине</a>
+            <a class="tag" href="rubrika.html">Обнова</a>
+            <a class="tag" href="rubrika.html">Село</a>
+            <a class="tag" href="rubrika.html">Архив</a>
+            <a class="tag" href="rubrika.html">Наслеђе</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Недељни преглед</h4>
+          <p class="meta" style="margin-bottom:.9rem">Пет текстова недеље, петком ујутру.</p>
+          <form data-demo-form>
+            <input type="email" placeholder="Е-пошта" aria-label="Адреса е-поште" required
+                   style="width:100%;font-family:var(--sans);font-size:var(--step--1);padding:.7rem .8rem;border:1px solid var(--rule-strong);background:var(--surface);color:var(--ink);border-radius:1px">
+            <button class="btn btn--primary" type="submit" style="width:100%;margin-top:.5rem;padding:.7rem 1rem">Пријави се</button>
+          </form>
+          <p class="meta" data-form-msg style="margin-top:.6rem"></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- =========================================================== аутор -->
+  <div class="wrap art-foot">
+    <div class="author-card">
+      <image-slot tone="ink" seed="7" round></image-slot>
+      <div>
+        <h4>Милан Обрадовић</h4>
+        <p class="meta">Пише о наслеђу, задужбинама и локалним архивима. У магазину од 2019.
+          <a href="rubrika.html" style="color:var(--oxblood)">Сви текстови аутора →</a></p>
+      </div>
+    </div>
+  </div>
+
+</article>
+
+<!-- ========================================================== повезано -->
+<section class="related">
+  <div class="wrap">
+    <div class="rule-head">
+      <h2>Из исте рубрике</h2>
+      <a class="more" href="rubrika.html">Традиција →</a>
+    </div>
+    <div class="related-grid">
+      <a class="rel-card reveal" href="clanak.html">
+        <image-slot tone="olive" seed="201" ratio="3/2" label="Фото"></image-slot>
+        <span class="kicker kicker--bare kicker--muted">Традиција</span>
+        <h3>Обичај који је град заборавио, а предграђе сачувало</h3>
+        <p class="meta">6 мин читања</p>
+      </a>
+      <a class="rel-card reveal" href="clanak.html">
+        <image-slot tone="gold" seed="211" ratio="3/2" label="Фото"></image-slot>
+        <span class="kicker kicker--bare kicker--muted">Историја</span>
+        <h3>Карте старих путева и оно што нам говоре данас</h3>
+        <p class="meta">12 мин читања</p>
+      </a>
+      <a class="rel-card reveal" href="clanak.html">
+        <image-slot tone="lapis" seed="221" ratio="3/2" label="Фото"></image-slot>
+        <span class="kicker kicker--bare kicker--muted">Друштво</span>
+        <h3>Ко данас прави свеће за сеоску цркву</h3>
+        <p class="meta">5 мин читања</p>
+      </a>
+      <a class="rel-card reveal" href="clanak.html">
+        <image-slot tone="plum" seed="231" ratio="3/2" label="Фото"></image-slot>
+        <span class="kicker kicker--bare kicker--muted">Култура</span>
+        <h3>Библиотека која је постала дневни боравак вароши</h3>
+        <p class="meta">9 мин читања</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__mark">ВИДОВДАН</div>
+      <div class="footer__tag">Српска традиција и национални интерес</div>
+    </div>
+    <div class="footer__bottom" style="border-top:0;padding-top:1.8rem">
+      <p style="margin:0;max-width:62ch">
+        <strong style="color:var(--gold-soft)">Прототип.</strong>
+        Ово је неслужбени предлог редизајна. Наслови, имена аутора и фотографије су приказни.
+      </p>
+      <p style="margin:0"><a href="index.html">Назад на образложење предлога</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="proto-pill">
+  <span><b>Прототип</b> · демо садржај</span>
+  <a href="index.html">О предлогу</a>
+</div>
+
+<script src="assets/js/image-slot.js"></script>
+<script src="assets/js/support.js"></script>
+</body>
+</html>
